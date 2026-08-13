@@ -1,0 +1,36 @@
+/* Header composition refinement based on the live staging screenshot. */
+@media (min-width: 901px) {
+  .header-inner {
+    min-height: 176px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 116px 60px;
+    justify-items: center;
+    gap: 0;
+  }
+
+  .brand {
+    justify-self: center;
+    width: 330px;
+    min-height: 116px;
+    background-position: 50% 50%;
+    background-size: auto 116px;
+  }
+
+  .site-nav {
+    width: 100%;
+    min-height: 60px;
+    justify-content: center;
+    gap: 30px;
+    border-top: 1px solid rgba(82, 134, 34, 0.2);
+  }
+}
+
+@media (max-width: 900px) {
+  .header-inner {
+    grid-template-columns: auto 1fr;
+  }
+
+  .brand {
+    justify-self: start;
+  }
+}
