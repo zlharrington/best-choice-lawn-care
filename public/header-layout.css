@@ -1,19 +1,21 @@
 /* Header composition refinement based on the live staging screenshot. */
 @media (min-width: 901px) {
   .header-inner {
-    min-height: 176px;
+    min-height: 196px;
     grid-template-columns: 1fr;
-    grid-template-rows: 116px 60px;
+    grid-template-rows: 136px 60px;
     justify-items: center;
     gap: 0;
   }
 
   .brand {
     justify-self: center;
-    width: 330px;
-    min-height: 116px;
-    background-position: 50% 50%;
-    background-size: auto 116px;
+    width: 290px;
+    min-height: 136px;
+    background-image: url('/best-choice-logo-centered.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   .site-nav {
@@ -32,5 +34,9 @@
 
   .brand {
     justify-self: start;
+    background-image: url('/best-choice-logo-centered.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
