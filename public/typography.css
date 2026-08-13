@@ -1,0 +1,188 @@
+:root {
+  --display: "Avenir Next", Avenir, "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+  --body: Aptos, "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+}
+
+body {
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.68;
+  letter-spacing: -0.006em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+.hero-card h2,
+.area-card strong,
+.feature h3,
+.service-card h3 {
+  font-family: var(--display);
+  font-weight: 750;
+  text-wrap: balance;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 5.4vw, 5.15rem);
+  line-height: 0.99;
+  letter-spacing: -0.048em;
+  font-weight: 800;
+}
+
+.section-heading h2,
+.section h2,
+.cta-section h2 {
+  font-size: clamp(2.25rem, 4.15vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.036em;
+  font-weight: 780;
+}
+
+.service-card h3 {
+  font-size: clamp(1.7rem, 2.65vw, 2.35rem);
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.hero-card h2,
+.area-card strong {
+  letter-spacing: -0.025em;
+}
+
+.hero-lede {
+  font-size: clamp(1.08rem, 1.65vw, 1.22rem);
+  line-height: 1.58;
+  letter-spacing: -0.012em;
+}
+
+.section-heading > p:last-child,
+.service-card p,
+.area-grid p,
+.feature p,
+.contact-grid > div:first-child p {
+  line-height: 1.72;
+}
+
+.section-heading > p:last-child,
+.hero-lede,
+.area-grid > div:first-child > p,
+.contact-grid > div:first-child > p {
+  max-width: 66ch;
+}
+
+.eyebrow,
+.card-kicker,
+.area-label {
+  font-family: var(--body);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  line-height: 1.35;
+}
+
+.site-nav {
+  font-family: var(--body);
+  font-size: 0.95rem;
+  font-weight: 650;
+  letter-spacing: -0.005em;
+}
+
+.nav-cta,
+.button,
+.menu-toggle {
+  font-family: var(--body);
+  font-size: 0.95rem;
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+.hero-proof,
+.trust-grid,
+.field-help,
+.form-note,
+.site-footer {
+  letter-spacing: 0;
+}
+
+.hero-proof {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.trust-grid strong {
+  font-size: 1rem;
+  font-weight: 750;
+  letter-spacing: -0.012em;
+}
+
+.trust-grid span {
+  margin-top: 2px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.service-number {
+  font-family: var(--body);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+}
+
+.feature h3 {
+  font-size: 1.3rem;
+  line-height: 1.18;
+  letter-spacing: -0.018em;
+}
+
+.phone-link,
+.text-link {
+  font-weight: 750;
+  letter-spacing: -0.012em;
+}
+
+.form-field label {
+  font-weight: 700;
+  letter-spacing: -0.008em;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font-family: var(--body);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.site-footer {
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+.footer-grid strong {
+  font-weight: 750;
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 700px) {
+  body {
+    font-size: 16px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 12vw, 3.65rem);
+    line-height: 1.01;
+  }
+
+  .section-heading h2,
+  .section h2,
+  .cta-section h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-lede {
+    font-size: 1.05rem;
+  }
+}
