@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- STAGING ONLY: replace the host with the final client domain before launch/submission. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://bestchoice.harringtonwebtest.com/</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/services.html</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/lawn-maintenance.html</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/fertilization-weed-control.html</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/commercial-landscape-maintenance.html</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/service-area.html</loc></url>
+  <url><loc>https://bestchoice.harringtonwebtest.com/contact.html</loc></url>
+</urlset>
