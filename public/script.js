@@ -1,10 +1,12 @@
-const typographyHref = '/typography.css';
-if (!document.querySelector(`link[href="${typographyHref}"]`)) {
-  const typographyLink = document.createElement('link');
-  typographyLink.rel = 'stylesheet';
-  typographyLink.href = typographyHref;
-  document.head.appendChild(typographyLink);
-}
+const siteStylesheets = ['/typography.css', '/header-layout.css'];
+siteStylesheets.forEach((href) => {
+  if (!document.querySelector(`link[href="${href}"]`)) {
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    document.head.appendChild(link);
+  }
+});
 
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#site-nav');
