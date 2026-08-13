@@ -46,13 +46,17 @@ if (contactForm && validateButton) {
   validateButton.addEventListener('click', () => {
     clearContactValidity();
 
-    const hasPhone = Boolean(phoneField?.value.trim());
+    const phoneValue = phoneField?.value.trim() ?? '';
+    const hasPhone = Boolean(phoneValue);
     const hasEmail = Boolean(emailField?.value.trim());
+    const phoneDigitCount = (phoneValue.match(/[0-9]/g) || []).length;
 
     if (!hasPhone && !hasEmail) {
       const message = 'Enter at least a phone number or an email address.';
       phoneField?.setCustomValidity(message);
       emailField?.setCustomValidity(message);
+    } else if (hasPhone && phoneDigitCount < 7) {
+      phoneField?.setCustomValidity('Enter a phone number with at least 7 digits.');
     }
 
     const valid = contactForm.reportValidity();
