@@ -161,9 +161,22 @@ h3,
   line-height: 1.55;
 }
 
-.footer-grid strong {
-  font-weight: 750;
-  letter-spacing: -0.01em;
+/* The supplied artwork is a wide banner. Crop it visually around the centered
+   Best Choice / tree / Lawn Care mark when used as compact site branding. */
+.brand {
+  width: 220px;
+  min-height: 76px;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+}
+
+.brand-footer {
+  width: 220px;
+  min-height: 76px;
+  background-position: 50% 50%;
+  background-size: auto 100%;
 }
 
 @media (max-width: 700px) {
@@ -184,5 +197,11 @@ h3,
 
   .hero-lede {
     font-size: 1.05rem;
+  }
+
+  .brand,
+  .brand-footer {
+    width: 190px;
+    min-height: 66px;
   }
 }
