@@ -161,15 +161,18 @@ h3,
   line-height: 1.55;
 }
 
+/* Use the known-good banner asset, cropped to a measured 475px source region.
+   The Best Choice lettering spans x=40..434 within that crop, leaving equal
+   40px visual margins on both sides. */
 .brand,
 .brand-footer {
-  width: 250px;
+  width: 238px;
   min-height: 118px;
-  overflow: visible;
-  background-image: url('/best-choice-logo-centered.png');
-  background-position: center center;
+  overflow: hidden;
+  background-image: url('/best-choice-logo.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 605px 118px;
+  background-position: -178px center;
 }
 
 @media (max-width: 700px) {
@@ -194,11 +197,10 @@ h3,
 
   .brand,
   .brand-footer {
-    width: 190px;
+    width: 181px;
     min-height: 90px;
-    background-image: url('/best-choice-logo-centered.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
+    background-image: url('/best-choice-logo.jpg');
+    background-size: 461px 90px;
+    background-position: -135px center;
   }
 }
