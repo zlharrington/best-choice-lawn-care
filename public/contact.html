@@ -27,7 +27,7 @@
       <form class="contact-form" data-contact-form aria-describedby="form-requirements form-status">
         <div class="form-grid">
           <div class="form-field"><label for="name">Name <span aria-hidden="true">*</span></label><input id="name" name="name" type="text" autocomplete="name" required></div>
-          <div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9()+. -]{7,20}" aria-describedby="phone-help"><span class="field-help" id="phone-help">Use 7–20 digits and common phone punctuation.</span></div>
+          <div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="(?=(?:[^0-9]*[0-9]){7,})[0-9()+. -]{7,20}" aria-describedby="phone-help"><span class="field-help" id="phone-help">Use 7–20 characters with at least 7 digits and common phone punctuation.</span></div>
           <div class="form-field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email"></div>
           <div class="form-field"><label for="property-type">Property type</label><select id="property-type" name="property-type"><option value="">Select one</option><option>Residential</option><option>Commercial</option><option>Association / HOA</option><option>Managed property</option></select></div>
           <div class="form-field"><label for="city">City</label><input id="city" name="city" type="text" autocomplete="address-level2"></div>
