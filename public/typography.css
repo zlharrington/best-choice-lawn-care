@@ -161,20 +161,15 @@ h3,
   line-height: 1.55;
 }
 
-/* Show the exact center 500px-wide brand portion of the original 1210px banner.
-   The dimensions below preserve that crop instead of squeezing the full banner. */
-.header-inner {
-  min-height: 112px;
-}
-
 .brand,
 .brand-footer {
-  width: 220px;
-  min-height: 104px;
-  overflow: hidden;
-  background-position: 50% 50%;
-  background-size: auto 104px;
+  width: 250px;
+  min-height: 118px;
+  overflow: visible;
+  background-image: url('/best-choice-logo-centered.png');
+  background-position: center center;
   background-repeat: no-repeat;
+  background-size: contain;
 }
 
 @media (max-width: 700px) {
@@ -197,18 +192,13 @@ h3,
     font-size: 1.05rem;
   }
 
-  .header-inner {
-    min-height: 92px;
-  }
-
   .brand,
   .brand-footer {
-    width: 180px;
-    min-height: 85px;
-    background-size: auto 85px;
-  }
-
-  .site-nav {
-    top: 92px;
+    width: 190px;
+    min-height: 90px;
+    background-image: url('/best-choice-logo-centered.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
