@@ -14,7 +14,7 @@
     width: 270px;
     min-height: 112px;
     overflow: hidden;
-    background-image: url('/best-choice-logo.webp');
+    background-image: url('/best-choice-logo.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
     width: 210px;
     min-height: 88px;
     overflow: hidden;
-    background-image: url('/best-choice-logo.webp');
+    background-image: url('/best-choice-logo.png');
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
