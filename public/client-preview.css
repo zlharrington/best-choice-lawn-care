@@ -1,0 +1,7 @@
+.hero-grid::after {
+  content: 'Project photo will be added when provided';
+}
+
+.service-card::before {
+  content: 'Service photo will be added when provided';
+}
