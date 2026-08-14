@@ -1,4 +1,5 @@
-/* Header composition refinement based on the live staging screenshot. */
+/* Best Choice header: logo left, navigation right. Use the known-good banner asset
+   with the same centered brand crop at every load order. */
 @media (min-width: 901px) {
   .header-inner {
     min-height: 128px;
@@ -13,9 +14,10 @@
     justify-self: start;
     width: 270px;
     min-height: 112px;
-    background-image: url('/best-choice-logo-centered.png');
-    background-position: center center;
-    background-size: contain;
+    overflow: hidden;
+    background-image: url('/best-choice-logo.jpg');
+    background-position: 50% 50%;
+    background-size: 572px 112px;
     background-repeat: no-repeat;
   }
 
@@ -35,9 +37,12 @@
 
   .brand {
     justify-self: start;
-    background-image: url('/best-choice-logo-centered.png');
-    background-position: center center;
-    background-size: contain;
+    width: 210px;
+    min-height: 88px;
+    overflow: hidden;
+    background-image: url('/best-choice-logo.jpg');
+    background-position: 50% 50%;
+    background-size: 450px 88px;
     background-repeat: no-repeat;
   }
 }
