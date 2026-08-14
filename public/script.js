@@ -37,7 +37,7 @@ if (menuButton && nav) {
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-function animateScrollTo(targetY, duration = 420) {
+function animateScrollTo(targetY, duration = 360) {
   const startY = window.scrollY;
   const distance = targetY - startY;
 
@@ -47,12 +47,12 @@ function animateScrollTo(targetY, duration = 420) {
   }
 
   const startTime = performance.now();
-  const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+  const easeOutQuart = (progress) => 1 - Math.pow(1 - progress, 4);
 
   function step(now) {
     const elapsed = now - startTime;
     const progress = Math.min(elapsed / duration, 1);
-    window.scrollTo(0, startY + distance * easeOutCubic(progress));
+    window.scrollTo(0, startY + distance * easeOutQuart(progress));
 
     if (progress < 1) requestAnimationFrame(step);
   }
