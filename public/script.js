@@ -35,6 +35,51 @@ if (menuButton && nav) {
   });
 }
 
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+function animateScrollTo(targetY, duration = 420) {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+
+  if (prefersReducedMotion.matches || Math.abs(distance) < 2) {
+    window.scrollTo(0, targetY);
+    return;
+  }
+
+  const startTime = performance.now();
+  const easeOutCubic = (progress) => 1 - Math.pow(1 - progress, 3);
+
+  function step(now) {
+    const elapsed = now - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * easeOutCubic(progress));
+
+    if (progress < 1) requestAnimationFrame(step);
+  }
+
+  requestAnimationFrame(step);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    const hash = link.getAttribute('href');
+    if (!hash || hash === '#') return;
+
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    event.preventDefault();
+    closeMenu();
+
+    const header = document.querySelector('.site-header');
+    const headerOffset = header ? header.getBoundingClientRect().height + 12 : 12;
+    const targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerOffset);
+
+    animateScrollTo(targetY);
+    history.replaceState(null, '', hash);
+  });
+});
+
 const contactForm = document.querySelector('[data-contact-form]');
 const validateButton = document.querySelector('[data-validate-form]');
 
