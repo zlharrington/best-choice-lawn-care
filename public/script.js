@@ -35,52 +35,6 @@ if (menuButton && nav) {
   });
 }
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-function animateScrollTo(targetY, duration = 440) {
-  const startY = window.scrollY;
-  const distance = targetY - startY;
-
-  if (prefersReducedMotion.matches || Math.abs(distance) < 2) {
-    window.scrollTo(0, targetY);
-    return;
-  }
-
-  const startTime = performance.now();
-  const smoothStep = (progress) => progress * progress * (3 - 2 * progress);
-
-  function step(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = smoothStep(progress);
-    window.scrollTo({ top: startY + distance * eased, left: 0, behavior: 'auto' });
-
-    if (progress < 1) requestAnimationFrame(step);
-  }
-
-  requestAnimationFrame(step);
-}
-
-document.querySelectorAll('a[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    const hash = link.getAttribute('href');
-    if (!hash || hash === '#') return;
-
-    const target = document.querySelector(hash);
-    if (!target) return;
-
-    event.preventDefault();
-    closeMenu();
-
-    const header = document.querySelector('.site-header');
-    const headerOffset = header ? header.getBoundingClientRect().height + 12 : 12;
-    const targetY = Math.max(0, target.getBoundingClientRect().top + window.scrollY - headerOffset);
-
-    animateScrollTo(targetY);
-    history.replaceState(null, '', hash);
-  });
-});
-
 const contactForm = document.querySelector('[data-contact-form]');
 const validateButton = document.querySelector('[data-validate-form]');
 
