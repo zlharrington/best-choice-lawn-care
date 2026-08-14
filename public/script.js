@@ -1,4 +1,4 @@
-const siteStylesheets = ['/header-layout.css', '/typography.css', '/simple-pages.css'];
+const siteStylesheets = ['/header-layout.css', '/typography.css', '/simple-pages.css', '/client-preview.css'];
 siteStylesheets.forEach((href) => {
   if (!document.querySelector(`link[href="${href}"]`)) {
     const link = document.createElement('link');
@@ -113,6 +113,10 @@ if (menuButton && nav) {
   });
 }
 
+document.querySelectorAll('.staging-note').forEach((note) => {
+  note.textContent = 'Website preview';
+});
+
 const contactForm = document.querySelector('[data-contact-form]');
 const validateButton = document.querySelector('[data-validate-form]');
 
@@ -121,6 +125,10 @@ if (contactForm && validateButton) {
   const phoneField = contactForm.querySelector('#phone');
   const emailField = contactForm.querySelector('#email');
   const status = contactForm.querySelector('#form-status');
+
+  if (status) {
+    status.textContent = 'Online estimate requests will be enabled when the destination email is connected.';
+  }
 
   const clearContactValidity = () => {
     phoneField?.setCustomValidity('');
@@ -151,7 +159,7 @@ if (contactForm && validateButton) {
 
     if (status) {
       status.textContent = valid
-        ? 'Your details pass the local validation check. Online submission is still disabled on this staging site; please call Best Choice to request an estimate.'
+        ? 'Your details look complete. Online estimate requests will be enabled when the destination email is connected; please call Best Choice in the meantime.'
         : 'Please correct the highlighted required or format fields. Enter your name and at least one contact method.';
     }
 
