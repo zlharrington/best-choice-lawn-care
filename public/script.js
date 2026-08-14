@@ -1,4 +1,4 @@
-const siteStylesheets = ['/header-layout.css', '/typography.css'];
+const siteStylesheets = ['/header-layout.css', '/typography.css', '/simple-pages.css'];
 siteStylesheets.forEach((href) => {
   if (!document.querySelector(`link[href="${href}"]`)) {
     const link = document.createElement('link');
