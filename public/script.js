@@ -72,6 +72,21 @@ if (nav) {
   });
 
   nav.prepend(themeSwitcher);
+
+  const callButton = nav.querySelector('.nav-cta[href^="tel:"]');
+  if (callButton && !nav.querySelector('.nav-phone-link')) {
+    const callGroup = document.createElement('span');
+    callGroup.className = 'nav-call-group';
+    callButton.before(callGroup);
+    callGroup.appendChild(callButton);
+
+    const phoneLink = document.createElement('a');
+    phoneLink.className = 'nav-phone-link';
+    phoneLink.href = callButton.getAttribute('href');
+    phoneLink.textContent = '(541) 567-5558';
+    phoneLink.setAttribute('aria-label', 'Call Best Choice Lawn Care at 541-567-5558');
+    callGroup.appendChild(phoneLink);
+  }
 }
 
 function closeMenu({ returnFocus = false } = {}) {
