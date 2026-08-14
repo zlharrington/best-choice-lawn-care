@@ -8,8 +8,71 @@ siteStylesheets.forEach((href) => {
   }
 });
 
+const THEME_STORAGE_KEY = 'bestChoiceTheme';
+const themeOptions = [
+  { id: 'dark', label: 'Dark' },
+  { id: 'light', label: 'Light' },
+  { id: 'earth', label: 'Earth' },
+  { id: 'sage', label: 'Sage' }
+];
+const validThemes = new Set(themeOptions.map(({ id }) => id));
+
+function getStoredTheme() {
+  try {
+    const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
+    return validThemes.has(stored) ? stored : null;
+  } catch {
+    return null;
+  }
+}
+
+function storeTheme(theme) {
+  try {
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
+  } catch {
+    // The theme still applies for this page if storage is unavailable.
+  }
+}
+
+const initialTheme = getStoredTheme() || 'sage';
+document.documentElement.dataset.theme = initialTheme;
+
 const menuButton = document.querySelector('.menu-toggle');
 const nav = document.querySelector('#site-nav');
+let themeButtons = [];
+
+function setTheme(theme, { persist = true } = {}) {
+  if (!validThemes.has(theme)) return;
+
+  document.documentElement.dataset.theme = theme;
+  themeButtons.forEach((button) => {
+    const selected = button.dataset.themeChoice === theme;
+    button.setAttribute('aria-pressed', String(selected));
+  });
+
+  if (persist) storeTheme(theme);
+}
+
+if (nav) {
+  const themeSwitcher = document.createElement('div');
+  themeSwitcher.className = 'theme-switcher';
+  themeSwitcher.setAttribute('role', 'group');
+  themeSwitcher.setAttribute('aria-label', 'Color scheme');
+
+  themeOptions.forEach(({ id, label }) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'theme-switcher-button';
+    button.dataset.themeChoice = id;
+    button.textContent = label;
+    button.setAttribute('aria-pressed', String(id === initialTheme));
+    button.addEventListener('click', () => setTheme(id));
+    themeSwitcher.appendChild(button);
+    themeButtons.push(button);
+  });
+
+  nav.prepend(themeSwitcher);
+}
 
 function closeMenu({ returnFocus = false } = {}) {
   if (!menuButton || !nav) return;
