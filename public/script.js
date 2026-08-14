@@ -1,13 +1,3 @@
-const siteStylesheets = ['/header-layout.css', '/typography.css', '/simple-pages.css', '/client-preview.css'];
-siteStylesheets.forEach((href) => {
-  if (!document.querySelector(`link[href="${href}"]`)) {
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = href;
-    document.head.appendChild(link);
-  }
-});
-
 const THEME_STORAGE_KEY = 'bestChoiceTheme';
 const themeOptions = [
   { id: 'dark', label: 'Dark' },
