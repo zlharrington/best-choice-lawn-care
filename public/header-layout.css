@@ -1,5 +1,4 @@
-/* Best Choice header: logo left, navigation right. Use the known-good banner asset
-   with the same centered brand crop at every load order. */
+/* Best Choice header: logo left, navigation right. */
 @media (min-width: 901px) {
   .header-inner {
     min-height: 128px;
@@ -15,9 +14,9 @@
     width: 270px;
     min-height: 112px;
     overflow: hidden;
-    background-image: url('/best-choice-logo.jpg');
-    background-position: 50% 50%;
-    background-size: 572px 112px;
+    background-image: url('/best-choice-logo.webp');
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
   }
 
@@ -25,9 +24,34 @@
     width: auto;
     min-height: 0;
     justify-content: flex-end;
-    gap: 26px;
+    gap: 22px;
     border-top: 0;
   }
+
+  .nav-call-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+  }
+}
+
+.nav-phone-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 4px;
+  color: var(--green-deep);
+  font-weight: 900;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.nav-phone-link:hover {
+  color: var(--red);
 }
 
 @media (max-width: 900px) {
@@ -40,9 +64,20 @@
     width: 210px;
     min-height: 88px;
     overflow: hidden;
-    background-image: url('/best-choice-logo.jpg');
-    background-position: 50% 50%;
-    background-size: 450px 88px;
+    background-image: url('/best-choice-logo.webp');
+    background-position: center;
+    background-size: contain;
     background-repeat: no-repeat;
+  }
+
+  .nav-call-group {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .nav-phone-link {
+    justify-content: flex-start;
+    padding-inline: 14px;
   }
 }
