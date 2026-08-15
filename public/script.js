@@ -19,6 +19,11 @@ darkProfessionalThemeStyles.rel = 'stylesheet';
 darkProfessionalThemeStyles.href = '/dark-professional-theme.css';
 document.head.appendChild(darkProfessionalThemeStyles);
 
+const servicePhotoStyles = document.createElement('link');
+servicePhotoStyles.rel = 'stylesheet';
+servicePhotoStyles.href = '/service-photos.css';
+document.head.appendChild(servicePhotoStyles);
+
 function getStoredTheme() {
   try {
     const stored = window.localStorage.getItem(THEME_STORAGE_KEY);
