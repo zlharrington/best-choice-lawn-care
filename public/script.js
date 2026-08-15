@@ -3,9 +3,15 @@ const themeOptions = [
   { id: 'dark', label: 'Dark' },
   { id: 'light', label: 'Light' },
   { id: 'earth', label: 'Earth' },
-  { id: 'sage', label: 'Sage' }
+  { id: 'sage', label: 'Sage' },
+  { id: 'professional', label: 'Professional' }
 ];
 const validThemes = new Set(themeOptions.map(({ id }) => id));
+
+const professionalThemeStyles = document.createElement('link');
+professionalThemeStyles.rel = 'stylesheet';
+professionalThemeStyles.href = '/professional-theme.css';
+document.head.appendChild(professionalThemeStyles);
 
 function getStoredTheme() {
   try {
