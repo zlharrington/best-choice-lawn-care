@@ -1,5 +1,5 @@
 /* Shared stock photography for homepage and services cards.
-   Images are served from Pexels' image CDN and cropped responsively. */
+   Images are served from Pexels' image CDN and cropped responsively, except the user-provided Turf Care photo stored locally. */
 
 html body .simple-service-grid > .simple-service {
   position: relative;
@@ -37,12 +37,12 @@ html body .simple-service-grid > .simple-service:nth-child(2)::before {
   background-position: center 42%;
 }
 
-/* Turf Care — manicured low-cut lawn */
+/* Turf Care — user-provided maintained natural lawn */
 html body .simple-service-grid > .simple-service:nth-child(3)::before {
   background-image:
     linear-gradient(rgba(7, 31, 17, .015), rgba(7, 31, 17, .015)),
-    url('https://images.pexels.com/photos/15252153/pexels-photo-15252153.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-position: center 62%;
+    url('/turf-care-user.jpg');
+  background-position: center 55%;
 }
 
 /* Sprinkler Repair — active irrigation */
