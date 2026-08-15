@@ -37,12 +37,12 @@ html body .simple-service-grid > .simple-service:nth-child(2)::before {
   background-position: center 42%;
 }
 
-/* Turf Care — healthy dense turf */
+/* Turf Care — lush healthy lawn texture */
 html body .simple-service-grid > .simple-service:nth-child(3)::before {
   background-image:
-    linear-gradient(rgba(7, 31, 17, .02), rgba(7, 31, 17, .02)),
-    url('https://images.pexels.com/photos/36346064/pexels-photo-36346064.jpeg?auto=compress&cs=tinysrgb&w=1600');
-  background-position: center;
+    linear-gradient(rgba(7, 31, 17, .015), rgba(7, 31, 17, .015)),
+    url('https://images.pexels.com/photos/479814/pexels-photo-479814.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 52%;
 }
 
 /* Sprinkler Repair — active irrigation */
