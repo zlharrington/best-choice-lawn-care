@@ -1,0 +1,91 @@
+/* Shared stock photography for homepage and services cards.
+   Images are served from Pexels' image CDN and cropped responsively. */
+
+html body .simple-service {
+  position: relative;
+  overflow: hidden;
+  padding-top: 190px;
+}
+
+html body .simple-service::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 155px;
+  display: block;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background-color: var(--cream);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Lawn Maintenance — active mowing */
+html body .simple-service:nth-child(1)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .05), rgba(7, 31, 17, .05)),
+    url('https://images.pexels.com/photos/6728933/pexels-photo-6728933.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 58%;
+}
+
+/* Shrubs & Small Trees — hedge/shrub trimming */
+html body .simple-service:nth-child(2)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
+    url('https://images.pexels.com/photos/24595771/pexels-photo-24595771/free-photo-of-man-cutting-hedge-with-a-trimmer-in-the-garden.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 42%;
+}
+
+/* Turf Care — healthy dense turf */
+html body .simple-service:nth-child(3)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .02), rgba(7, 31, 17, .02)),
+    url('https://images.pexels.com/photos/36346064/pexels-photo-36346064/free-photo-of-close-up-of-green-grass-turf-surface.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center;
+}
+
+/* Sprinkler Repair — active irrigation */
+html body .simple-service:nth-child(4)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
+    url('https://images.pexels.com/photos/12887876/pexels-photo-12887876.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 56%;
+}
+
+/* Professional themes already use square cards; keep the photo treatment crisp. */
+html[data-theme="professional"] body .simple-service,
+html[data-theme="dark-professional"] body .simple-service {
+  padding-top: 190px;
+}
+
+html[data-theme="professional"] body .simple-service::before,
+html[data-theme="dark-professional"] body .simple-service::before {
+  height: 155px;
+  border-style: solid;
+}
+
+html[data-theme="dark-professional"] body .simple-service::before {
+  border-bottom-color: rgba(93, 151, 104, .28);
+  filter: brightness(.82) saturate(.9);
+}
+
+@media (min-width: 900px) {
+  .simple-service-grid-large .simple-service {
+    min-height: 330px;
+  }
+}
+
+@media (max-width: 700px) {
+  html body .simple-service,
+  html[data-theme="professional"] body .simple-service,
+  html[data-theme="dark-professional"] body .simple-service {
+    padding-top: 175px;
+  }
+
+  html body .simple-service::before,
+  html[data-theme="professional"] body .simple-service::before,
+  html[data-theme="dark-professional"] body .simple-service::before {
+    height: 140px;
+  }
+}
