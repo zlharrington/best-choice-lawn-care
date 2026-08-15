@@ -4,7 +4,8 @@ const themeOptions = [
   { id: 'light', label: 'Light' },
   { id: 'earth', label: 'Earth' },
   { id: 'sage', label: 'Sage' },
-  { id: 'professional', label: 'Professional' }
+  { id: 'professional', label: 'Professional' },
+  { id: 'dark-professional', label: 'Dark Professional' }
 ];
 const validThemes = new Set(themeOptions.map(({ id }) => id));
 
@@ -12,6 +13,11 @@ const professionalThemeStyles = document.createElement('link');
 professionalThemeStyles.rel = 'stylesheet';
 professionalThemeStyles.href = '/professional-theme.css';
 document.head.appendChild(professionalThemeStyles);
+
+const darkProfessionalThemeStyles = document.createElement('link');
+darkProfessionalThemeStyles.rel = 'stylesheet';
+darkProfessionalThemeStyles.href = '/dark-professional-theme.css';
+document.head.appendChild(darkProfessionalThemeStyles);
 
 function getStoredTheme() {
   try {
