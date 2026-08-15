@@ -124,6 +124,22 @@ document.querySelectorAll('.staging-note').forEach((note) => {
   note.textContent = 'Website preview';
 });
 
+document.querySelectorAll('.footer-bottom').forEach((footerBottom) => {
+  if (footerBottom.querySelector('.site-credit')) return;
+
+  const credit = document.createElement('span');
+  credit.className = 'site-credit';
+  credit.append('Website design & development by ');
+
+  const creditLink = document.createElement('a');
+  creditLink.href = 'https://harringtonit.com';
+  creditLink.textContent = 'Harrington IT';
+  creditLink.setAttribute('aria-label', 'Harrington IT website');
+
+  credit.appendChild(creditLink);
+  footerBottom.appendChild(credit);
+});
+
 const contactForm = document.querySelector('[data-contact-form]');
 const validateButton = document.querySelector('[data-validate-form]');
 
