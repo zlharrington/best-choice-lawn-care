@@ -1,5 +1,6 @@
-/* Shared stock photography for homepage and services cards.
-   Images are served from Pexels' image CDN and cropped responsively, except the user-provided Turf Care photo stored locally. */
+/* Shared service-card photography.
+   Homepage and Services page intentionally use different but visually related images
+   so repeated services do not show the exact same photo twice. */
 
 html body .simple-service-grid > .simple-service {
   position: relative;
@@ -21,8 +22,12 @@ html body .simple-service-grid > .simple-service::before {
   background-repeat: no-repeat;
 }
 
-/* Lawn Maintenance — active mowing */
-html body .simple-service-grid > .simple-service:nth-child(1)::before {
+/* =========================
+   Homepage photo set
+   ========================= */
+
+/* Lawn Care — active mowing */
+body.page-home .simple-service-grid > .simple-service:nth-child(1)::before {
   background-image:
     linear-gradient(rgba(7, 31, 17, .05), rgba(7, 31, 17, .05)),
     url('https://images.pexels.com/photos/6728933/pexels-photo-6728933.jpeg?auto=compress&cs=tinysrgb&w=1600');
@@ -30,7 +35,7 @@ html body .simple-service-grid > .simple-service:nth-child(1)::before {
 }
 
 /* Shrubs & Small Trees — hedge/shrub trimming */
-html body .simple-service-grid > .simple-service:nth-child(2)::before {
+body.page-home .simple-service-grid > .simple-service:nth-child(2)::before {
   background-image:
     linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
     url('https://images.pexels.com/photos/24595771/pexels-photo-24595771.jpeg?auto=compress&cs=tinysrgb&w=1600');
@@ -38,7 +43,7 @@ html body .simple-service-grid > .simple-service:nth-child(2)::before {
 }
 
 /* Turf Care — user-provided maintained natural lawn */
-html body .simple-service-grid > .simple-service:nth-child(3)::before {
+body.page-home .simple-service-grid > .simple-service:nth-child(3)::before {
   background-image:
     linear-gradient(rgba(7, 31, 17, .015), rgba(7, 31, 17, .015)),
     url('/turf-care-user.jpg');
@@ -46,11 +51,48 @@ html body .simple-service-grid > .simple-service:nth-child(3)::before {
 }
 
 /* Sprinkler Repair — active irrigation */
-html body .simple-service-grid > .simple-service:nth-child(4)::before {
+body.page-home .simple-service-grid > .simple-service:nth-child(4)::before {
   background-image:
     linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
     url('https://images.pexels.com/photos/12887876/pexels-photo-12887876.jpeg?auto=compress&cs=tinysrgb&w=1600');
   background-position: center 56%;
+}
+
+/* =========================
+   Services page photo set
+   Similar subject matter, different photos
+   ========================= */
+
+/* Lawn Maintenance — different mower-at-work shot */
+body.page-services .simple-service-grid > .simple-service:nth-child(1)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .05), rgba(7, 31, 17, .05)),
+    url('https://images.pexels.com/photos/28180214/pexels-photo-28180214.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 54%;
+}
+
+/* Shrubs & Small Trees — different hedge-trimming shot */
+body.page-services .simple-service-grid > .simple-service:nth-child(2)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
+    url('https://images.pexels.com/photos/24595769/pexels-photo-24595769.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 44%;
+}
+
+/* Turf Care — different freshly mowed residential lawn */
+body.page-services .simple-service-grid > .simple-service:nth-child(3)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .015), rgba(7, 31, 17, .015)),
+    url('https://images.pexels.com/photos/8469933/pexels-photo-8469933.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 58%;
+}
+
+/* Sprinkler Repair — different sprinkler-on-lawn shot */
+body.page-services .simple-service-grid > .simple-service:nth-child(4)::before {
+  background-image:
+    linear-gradient(rgba(7, 31, 17, .04), rgba(7, 31, 17, .04)),
+    url('https://images.pexels.com/photos/8791457/pexels-photo-8791457.jpeg?auto=compress&cs=tinysrgb&w=1600');
+  background-position: center 52%;
 }
 
 /* Professional themes already use square cards; keep the photo treatment crisp. */
